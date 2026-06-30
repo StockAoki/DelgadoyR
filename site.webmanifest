@@ -1,0 +1,16 @@
+{
+    "name": "Delgado & R Automotriz",
+    "short_name": "Delgado & R",
+    "description": "Taller de enderezado y pintura en Caballo Blanco, Cartago, Costa Rica.",
+    "start_url": "/",
+    "display": "standalone",
+    "background_color": "#1F1F1F",
+    "theme_color": "#8C1F1F",
+    "icons": [
+        {
+            "src": "favicon.ico",
+            "sizes": "48x48",
+            "type": "image/x-icon"
+        }
+    ]
+}
