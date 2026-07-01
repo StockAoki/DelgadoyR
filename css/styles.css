@@ -17,7 +17,7 @@
 
 * { box-sizing: border-box; }
 
-html { scroll-behavior: smooth; overscroll-behavior: none; background-color: var(--color-carbon-deep); }
+html { scroll-behavior: smooth; overscroll-behavior: none; background-color: var(--color-carbon-deep); overflow-x: hidden; touch-action: pan-y; }
 
 @media (prefers-reduced-motion: reduce) {
     html { scroll-behavior: auto; }
@@ -31,6 +31,7 @@ body {
     line-height: 1.6;
     overflow-x: hidden;
     overscroll-behavior: none;
+    touch-action: pan-y;
 }
 
 h1, h2, h3 {
