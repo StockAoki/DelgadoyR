@@ -17,7 +17,7 @@
 
 * { box-sizing: border-box; }
 
-html { scroll-behavior: smooth; overscroll-behavior: none; background-color: var(--color-carbon-deep); overflow-x: hidden; }
+html { scroll-behavior: smooth; overscroll-behavior: none; }
 
 @media (prefers-reduced-motion: reduce) {
     html { scroll-behavior: auto; }
