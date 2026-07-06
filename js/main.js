@@ -135,6 +135,17 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
+    // === FAQ ACORDION (una sola pregunta abierta) ===
+    document.querySelectorAll('.faq-item').forEach((item) => {
+        item.addEventListener('toggle', () => {
+            if (item.open) {
+                document.querySelectorAll('.faq-item[open]').forEach((other) => {
+                    if (other !== item) other.removeAttribute('open');
+                });
+            }
+        });
+    });
+
     // === CARRUSEL DE TESTIMONIOS (solo mobile) ===
     const testimonialsGrid = document.getElementById('testimonialsGrid');
     const tDots = document.querySelectorAll('.t-dot');
