@@ -860,9 +860,27 @@ button { font-family: inherit; }
 .contact-info p { font-size: 13.5px; color: var(--color-white); line-height: 1.55; margin: 0; }
 .contact-phone { font-family: var(--font-display); font-weight: 800; font-size: 1.45rem; color: var(--color-white); letter-spacing: .5px; }
 
-.contact-right { height: 100%; }
-.contact-map { height: 100%; min-height: 380px; border-radius: 8px; overflow: hidden; background: rgba(0, 0, 0, .2); }
-.contact-map iframe { width: 100%; height: 100%; min-height: 380px; border: none; }
+.contact-right { height: 100%; display: flex; flex-direction: column; gap: 12px; }
+.contact-map { flex: 1; min-height: 340px; border-radius: 8px; overflow: hidden; background: rgba(0, 0, 0, .2); }
+.contact-map iframe { width: 100%; height: 100%; min-height: 340px; border: none; }
+
+.btn-waze {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    align-self: flex-start;
+    background: rgba(0, 0, 0, .22);
+    color: var(--color-white);
+    font-family: var(--font-body);
+    font-size: 13px;
+    font-weight: 600;
+    letter-spacing: .5px;
+    padding: 10px 18px;
+    border-radius: 6px;
+    text-decoration: none;
+    transition: background-color .15s ease;
+}
+.btn-waze:hover { background: rgba(0, 0, 0, .4); }
 
 /* === FOOTER === */
 .site-footer { background: #111; padding: 56px max(20px, 5vw) 0; }
@@ -1035,7 +1053,7 @@ button { font-family: inherit; }
 
     .contact-inner { grid-template-columns: 1fr; gap: 32px; }
     .contact-info { flex-direction: column; gap: 20px; }
-    .contact-map, .contact-map iframe { min-height: 220px; }
+    .contact-map, .contact-map iframe { min-height: 200px; }
 
     .footer-grid { grid-template-columns: 1fr 1fr; gap: 28px; }
     .footer-brand { grid-column: 1 / -1; }
