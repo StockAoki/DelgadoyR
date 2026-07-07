@@ -1,6 +1,28 @@
+# OS
 .DS_Store
 Thumbs.db
+
+# Logs
 *.log
+
+# Dependencies
 node_modules/
+
+# Editors
 .vscode/
+.idea/
+
+# Cloudflare / Wrangler
+.wrangler/
+
+# Environment variables
+.env
+.env.*
+*.local
+
+# Build / cache
+dist/
+.cache/
+
+# Herramientas internas
 .gstack/
