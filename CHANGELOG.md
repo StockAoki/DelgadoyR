@@ -2,6 +2,23 @@
 
 Todos los cambios notables de este proyecto se documentan en este archivo.
 
+## [0.4.0] - 2026-07-07
+
+### Agregado
+- Despliegue en Cloudflare Pages con auto-deploy desde GitHub (rama main).
+- Dominio personalizado delgadoyrautomotriz.com y www conectados con SSL.
+- Redirect 301 de www a sin-www via Cloudflare Redirect Rules.
+- Google Analytics 4 (G-VBDQKCT9B8) instalado.
+- GA4 event tracking: click_whatsapp, click_telefono, click_instagram, click_navegacion, click_email, click_externo — con parámetros link_location y servicio/producto. Un solo listener en main.js, sin tocar cada link del HTML.
+- Links de Instagram en sección Nosotros (botón pill) y sección Contacto (botón outlined).
+- .gitignore actualizado: .wrangler/, .env, dist/, .cache/, .idea/.
+
+### Cambiado
+- Canonical, og:url, og:image y schema LocalBusiness actualizados a URL sin www.
+- Sitemap actualizado a URL sin www y reenviado en Google Search Console.
+- Labels de contacto con mayor opacidad (45% → 75%).
+- Links de teléfono e Instagram en sección Nosotros con estilo pill (borde + hover).
+
 ## [0.3.0] - 2026-07-06
 
 ### Agregado

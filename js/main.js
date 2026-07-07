@@ -135,6 +135,89 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
+    // === GA4 EVENT TRACKING ===
+    (function () {
+        if (typeof gtag !== 'function') return;
+
+        const SECTION_MAP = {
+            inicio: 'hero',
+            servicios: 'servicios',
+            nosotros: 'nosotros',
+            'antes-despues': 'antes_despues',
+            faq: 'faq',
+            testimonios: 'testimonios',
+            contacto: 'contacto',
+        };
+
+        function getLinkLocation(el) {
+            if (el.classList.contains('whatsapp-float')) return 'floating_button';
+            let node = el.parentElement;
+            while (node && node !== document.body) {
+                if (node.tagName === 'HEADER') return 'nav';
+                if (node.id === 'mobileNav') return 'nav_mobile';
+                if (node.tagName === 'FOOTER') return 'footer';
+                if (node.tagName === 'SECTION') return SECTION_MAP[node.id] || node.id || 'section';
+                node = node.parentElement;
+            }
+            return 'page';
+        }
+
+        document.addEventListener('click', function (e) {
+            const link = e.target.closest('a[href]');
+            if (!link) return;
+
+            const href = link.href;
+            const location = getLinkLocation(link);
+
+            if (href.includes('wa.me')) {
+                const params = { link_location: location };
+                if (link.dataset.servicio) params.servicio = link.dataset.servicio;
+                if (link.dataset.producto) params.producto = link.dataset.producto;
+                gtag('event', 'click_whatsapp', params);
+                return;
+            }
+
+            if (href.startsWith('tel:')) {
+                gtag('event', 'click_telefono', { link_location: location });
+                return;
+            }
+
+            if (href.startsWith('mailto:')) {
+                gtag('event', 'click_email', {
+                    link_location: location,
+                    email: href.replace('mailto:', '').split('?')[0],
+                });
+                return;
+            }
+
+            let url;
+            try { url = new URL(href); } catch (err) { return; }
+            if (url.hostname === window.location.hostname) return;
+
+            const hostname = url.hostname.replace(/^www\./, '');
+
+            if (hostname.includes('instagram.com')) {
+                gtag('event', 'click_instagram', { link_location: location });
+                return;
+            }
+
+            if (hostname.includes('google.com') && href.includes('maps')) {
+                gtag('event', 'click_navegacion', { destino: 'google_maps', link_location: location });
+                return;
+            }
+
+            if (hostname.includes('waze.com')) {
+                gtag('event', 'click_navegacion', { destino: 'waze', link_location: location });
+                return;
+            }
+
+            gtag('event', 'click_externo', {
+                destino: link.dataset.destino || hostname,
+                link_location: location,
+            });
+        });
+    }());
+
     // === FAQ ACORDION (una sola pregunta abierta) ===
     document.querySelectorAll('.faq-item').forEach((item) => {
         item.addEventListener('toggle', () => {
