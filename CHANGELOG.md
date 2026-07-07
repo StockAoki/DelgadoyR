@@ -2,6 +2,40 @@
 
 Todos los cambios notables de este proyecto se documentan en este archivo.
 
+## [0.3.0] - 2026-07-06
+
+### Agregado
+- SEO: Schema LocalBusiness (AutoRepair) con dirección exacta, código postal 30109, coordenadas, horario y teléfono con código de país.
+- SEO: Schema FAQPage con 5 preguntas frecuentes.
+- SEO: Canonical tag y meta Open Graph completos (og:title, og:description, og:image, og:locale es_CR).
+- SEO: Preload de imagen hero con fetchpriority="high" para mejorar LCP.
+- SEO: Google Fonts cargando de forma no bloqueante (rel="preload" + onload + noscript fallback).
+- SEO: lazy loading en 17 imágenes debajo del fold.
+- SEO: sitemap.xml con lastmod actualizado.
+- Sección FAQ en acordión (5 preguntas, primera abierta por defecto, solo una abierta a la vez) reemplaza la sección "Garantía real".
+- Mapa con botones Google Maps y Waze dentro del mapa en la esquina inferior.
+- Sección de contacto rediseñada: layout 2 columnas en desktop, info en grid 3 columnas (dirección, WhatsApp, horario).
+- Carrusel de testimonios en mobile: scroll horizontal con snap, auto-scroll cada 3.5s, dots indicadores y pausa al tocar.
+- Servicio de Reparación de aros (reemplaza Grúas) con foto real.
+- Favicons completos: apple-touch-icon.png (180x180), android-chrome 192px y 512px, favicon-16x16.png, favicon-32x32.png, favicon.ico.
+- site.webmanifest actualizado con iconos Android/PWA y maskable icon.
+
+### Cambiado
+- 18 imágenes convertidas de JPG a WebP (calidad 82), JPGs originales eliminados. Ahorro ~35% de peso.
+- Botón WhatsApp en sección de contacto: blanco sólido (#F5F4F1) sobre fondo rojo para máximo contraste.
+- Imágenes renombradas a lowercase (arreglo-de-aros.webp, arreglo-frontal-bocho.webp).
+- theme-color unificado a #8C1F1F en HTML y webmanifest.
+- H2 de sección de contacto con referencia geográfica "Ubicados en Caballo Blanco, Cartago".
+
+### Resuelto (pendientes de versión anterior)
+- Mapa con coordenadas exactas (9.851807, -83.899495) y dirección: 700 metros sur y 75 norte del McDonald's de Dulce Nombre.
+- Favicon y site.webmanifest con iconos reales para Android e iOS.
+- Testimonios con nombres reales de clientes.
+
+### Pendiente
+- Páginas individuales por servicio (SEO Fase 2): /enderezado-y-pintura, /mecanica-rapida, /soldadura-carroceria, /reparacion-de-aros, /tramites-aseguradoras.
+- Formulario de cotización con foto (Fase 3).
+
 ## [0.2.0] - 2026-06-30
 
 ### Cambiado
