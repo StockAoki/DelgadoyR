@@ -493,7 +493,12 @@ button { font-family: inherit; }
     gap: 10px;
     margin-top: 14px;
     font-weight: 600;
+    border: 1.5px solid var(--color-red);
+    border-radius: 999px;
+    padding: 8px 16px 8px 8px;
+    transition: background-color .15s ease, transform .15s ease;
 }
+.about-phone:hover { background: rgba(140, 31, 31, .07); transform: translateY(-2px); }
 
 .about-phone-icon {
     width: 36px;
@@ -908,9 +913,24 @@ button { font-family: inherit; }
     padding-top: 24px;
     border-top: 1px solid rgba(245, 244, 241, .18);
 }
-.contact-label { display: block; font-size: 10px; color: rgba(245, 244, 241, .45); letter-spacing: 2px; text-transform: uppercase; margin-bottom: 8px; }
+.contact-label { display: block; font-size: 10px; color: rgba(245, 244, 241, .75); letter-spacing: 2px; text-transform: uppercase; margin-bottom: 8px; }
 .contact-info p { font-size: 13px; color: var(--color-white); line-height: 1.5; margin: 0; }
 .contact-phone { font-family: var(--font-display); font-weight: 800; font-size: 1.2rem; color: var(--color-white); letter-spacing: .5px; }
+.contact-ig { margin-top: 20px; padding-top: 20px; border-top: 1px solid rgba(245, 244, 241, .18); }
+.contact-ig-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 9px;
+    background: transparent;
+    color: var(--color-white);
+    border: 1.5px solid rgba(245, 244, 241, .55);
+    padding: 12px 22px;
+    border-radius: 999px;
+    font-size: 14px;
+    font-weight: 600;
+    transition: background-color .15s ease, border-color .15s ease, transform .15s ease;
+}
+.contact-ig-link:hover { background: rgba(245, 244, 241, .12); border-color: var(--color-white); transform: translateY(-2px); }
 
 .contact-right { height: 100%; }
 
