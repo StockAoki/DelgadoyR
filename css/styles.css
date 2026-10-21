@@ -916,7 +916,7 @@ button { font-family: inherit; }
 .contact-label { display: block; font-size: 10px; color: rgba(245, 244, 241, .75); letter-spacing: 2px; text-transform: uppercase; margin-bottom: 8px; }
 .contact-info p { font-size: 13px; color: var(--color-white); line-height: 1.5; margin: 0; }
 .contact-phone { font-family: var(--font-display); font-weight: 800; font-size: 1.2rem; color: var(--color-white); letter-spacing: .5px; }
-.contact-ig { margin-top: 20px; padding-top: 20px; border-top: 1px solid rgba(245, 244, 241, .18); }
+.contact-ig { margin-top: 20px; padding-top: 20px; border-top: 1px solid rgba(245, 244, 241, .18); display: flex; flex-wrap: wrap; gap: 10px; }
 .contact-ig-link {
     display: inline-flex;
     align-items: center;
