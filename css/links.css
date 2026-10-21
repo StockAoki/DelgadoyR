@@ -1,0 +1,245 @@
+*, *::before, *::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+:root {
+    --red:     #8C1F1F;
+    --carbon:  #1F1F1F;
+    --deep:    #161616;
+    --gray:    #D6D6D2;
+    --bone:    #F5F4F1;
+    --wa:      #25D366;
+}
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    background-color: var(--deep);
+    background-image: radial-gradient(ellipse at 50% -5%, rgba(140, 31, 31, 0.22) 0%, transparent 58%);
+    background-attachment: fixed;
+    color: var(--bone);
+    min-height: 100svh;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 0 20px;
+}
+
+/* ========== PAGE ========== */
+
+.page {
+    width: 100%;
+    max-width: 460px;
+    padding: 52px 0 44px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 36px;
+}
+
+/* ========== PROFILE ========== */
+
+.profile {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 14px;
+    text-align: center;
+}
+
+.profile-avatar {
+    width: 76px;
+    height: 76px;
+    border-radius: 50%;
+    background: var(--red);
+    color: var(--bone);
+    font-size: 20px;
+    font-weight: 800;
+    letter-spacing: -0.5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    box-shadow: 0 0 0 3px rgba(140, 31, 31, 0.25), 0 0 0 6px rgba(140, 31, 31, 0.08);
+}
+
+.profile-name {
+    font-size: 19px;
+    font-weight: 800;
+    letter-spacing: -0.3px;
+    color: var(--bone);
+    line-height: 1.2;
+}
+
+.profile-tagline {
+    font-size: 13px;
+    color: rgba(214, 214, 210, 0.55);
+    font-weight: 500;
+    line-height: 1.65;
+}
+
+/* ========== LINKS ========== */
+
+.links {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.link-btn {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    padding: 14px 16px;
+    border-radius: 14px;
+    background: rgba(255, 255, 255, 0.06);
+    border: 1px solid rgba(255, 255, 255, 0.09);
+    color: var(--bone);
+    text-decoration: none;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 600;
+    font-size: 14px;
+    width: 100%;
+    transition: background 0.15s ease, border-color 0.15s ease, transform 0.15s ease;
+    cursor: pointer;
+}
+
+.link-btn:hover {
+    background: rgba(255, 255, 255, 0.11);
+    border-color: rgba(255, 255, 255, 0.18);
+    transform: translateY(-2px);
+}
+
+.link-btn:active {
+    transform: translateY(0);
+    background: rgba(255, 255, 255, 0.08);
+}
+
+.link-icon {
+    width: 42px;
+    height: 42px;
+    border-radius: 11px;
+    background: rgba(255, 255, 255, 0.1);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    color: var(--bone);
+}
+
+.link-label {
+    flex: 1;
+    text-align: left;
+}
+
+.link-arrow {
+    opacity: 0.3;
+    display: flex;
+    align-items: center;
+    flex-shrink: 0;
+    transition: opacity 0.15s ease;
+}
+
+.link-btn:hover .link-arrow {
+    opacity: 0.6;
+}
+
+/* WhatsApp — botón principal, verde */
+.link-wa {
+    background: var(--wa);
+    border-color: transparent;
+    color: #fff;
+    padding: 18px 16px;
+}
+.link-wa:hover {
+    background: #20bf5a;
+    border-color: transparent;
+}
+.link-wa:active {
+    background: #1aaa4f;
+}
+.link-wa .link-icon {
+    background: rgba(0, 0, 0, 0.18);
+    color: #fff;
+}
+.link-wa .link-arrow {
+    opacity: 0.5;
+}
+.link-wa:hover .link-arrow {
+    opacity: 0.85;
+}
+
+/* Teléfono */
+.link-phone .link-icon {
+    background: rgba(140, 31, 31, 0.28);
+    color: #e87070;
+}
+
+/* Instagram */
+.link-instagram .link-icon {
+    background: rgba(193, 53, 132, 0.22);
+    color: #e880aa;
+}
+
+/* Facebook */
+.link-facebook .link-icon {
+    background: rgba(66, 103, 178, 0.28);
+    color: #7fa6e0;
+}
+
+/* Google Maps */
+.link-maps .link-icon {
+    background: rgba(234, 67, 53, 0.22);
+    color: #f28b82;
+}
+
+/* ========== FOOTER ========== */
+
+.page-footer {
+    margin-top: 4px;
+}
+
+.footer-link {
+    font-size: 12px;
+    color: rgba(214, 214, 210, 0.3);
+    text-decoration: none;
+    letter-spacing: 0.4px;
+    font-weight: 500;
+    transition: color 0.15s ease;
+}
+
+.footer-link:hover {
+    color: rgba(214, 214, 210, 0.6);
+}
+
+/* ========== DESKTOP ========== */
+
+@media (min-width: 600px) {
+    body {
+        align-items: center;
+    }
+
+    .page {
+        padding: 64px 0 52px;
+    }
+
+    .profile-avatar {
+        width: 84px;
+        height: 84px;
+        font-size: 22px;
+    }
+
+    .profile-name {
+        font-size: 21px;
+    }
+}
+
+/* ========== MOTION ========== */
+
+@media (prefers-reduced-motion: reduce) {
+    .link-btn {
+        transition: none;
+    }
+}
